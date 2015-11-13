@@ -33,11 +33,11 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
     "use strict";
-    return gulp.src(['./public/app/**/*.js', '!./public/app/bower_components'])
+    return gulp.src(['./public/app/**/*.js'])
         .pipe(ngAnnotate())
-        .pipe(angularFilesort())
-        .pipe(jsValidate())
-        .pipe(uglify())
+        //.pipe(angularFilesort())
+        //.pipe(jsValidate())
+        //.pipe(uglify())
         //.pipe(concat('app.js'))
         .pipe(gulp.dest('./public/dist'));
 });
@@ -50,15 +50,15 @@ gulp.task('index', ['styles', 'scripts'], function () {
 
     var sources = gulp.src(['./public/dist/js/*.js', './public/dist/css/*.css'], {read: false});
 
-    target
-        .pipe(inject(gulp.src(bowerFiles(), { read: false}), {name: 'bower'}))
-        .pipe(inject(es.merge(sources), {relative: true}))
+    //target.pipe(inject(gulp.src(bowerFiles(), { read: false}), {name: 'bower'}))
+    //    target.pipe(inject(es.merge(sources), {relative: true}))
+    target.pipe(inject(sources, {relative: true}))
         .pipe(gulp.dest('./public/dist'));
 });
 
 gulp.task('img', function () {
     "use strict";
-    return gulp.src(['./public/app/**/*.png', './public/app/**/*.jpg', '!./public/app/bower_components'])
+    return gulp.src(['./public/app/**/*.png', './public/app/**/*.jpg'])
         .pipe(gulp.dest('./public/dist'));
 });
 
@@ -85,7 +85,7 @@ gulp.task('assets', function () {
 gulp.task('bower', function () {
     "use strict";
     return gulp.src(bowerFiles(), { base: './public/app/bower_components' })
-        .pipe(gulp.dest('./public/dist/bower'));
+        .pipe(gulp.dest('./public/dist/bower_components'));
 });
 
 gulp.task('default', ['index']);

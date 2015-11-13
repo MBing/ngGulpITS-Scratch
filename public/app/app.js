@@ -7,7 +7,6 @@
         'ui.router',
         'ngMarkdown'
     ]).config(config);
-    console.log("app loaded and ready to go");
     /* @ngInject */
     function config($stateProvider, $httpProvider) {
         var main = {
