@@ -16,10 +16,7 @@ gulp.task('clean-dist', function () {
     "use strict";
     return gulp.src('./public/dist/*', { read: false}).pipe(clean());
 });
-gulp.task('clean-tmp', function () {
-    "use strict";
-    return gulp.src('.tmp/*', { read: false}).pipe(clean());
-});
+
 
 gulp.task('styles', function() {
     "use strict";
@@ -53,7 +50,7 @@ gulp.task('index', ['styles', 'scripts'], function () {
 
     var sources = gulp.src(['./public/dist/js/*.js', './public/dist/css/*.css'], {read: false});
 
-    target.pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
+    target.pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower', relative: true}))
         .pipe(inject(es.merge(sources), {relative: true}))
         .pipe(gulp.dest('./public/dist'));
 });
@@ -63,15 +60,23 @@ gulp.task('img', function () {
 //    TODO
 });
 
+gulp.task('fonts', function () {
+    return gulp.src(mainBowerFiles())
+        .pipe($.filter('**/*.woff'))
+        .pipe($.flatten())
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe($.size());
+});
+
 gulp.task('default', ['index']);
 
 gulp.task('watch', ['index', 'styles', 'scripts'], function () {
     "use strict";
-    gulp.watch('public/app/styles/**/*', ['styles']);
-    gulp.watch('public/app/app.js', ['scripts']);
-    gulp.watch('public/app/js/**/*', ['scripts']);
-    gulp.watch('public/app/img/**/*', ['img']);
-    gulp.watch('bower.json', ['index'])
+    gulp.watch('./public/app/styles/**/*', ['styles']);
+    gulp.watch('./public/app/app.js', ['scripts']);
+    gulp.watch('./public/app/js/**/*', ['scripts']);
+    gulp.watch('./public/app/img/**/*', ['img']);
+    gulp.watch('./bower.json', ['index'])
 });
 
 gulp.task('serve', ['watch'], function () {
