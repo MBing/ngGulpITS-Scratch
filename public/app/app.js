@@ -15,17 +15,17 @@
             url: '',
             views: {
                 "header": {
-                    templateUrl: 'views/header.html',
+                    templateUrl: './views/header.html',
                     controller: 'HeaderCtrl',
                     controllerAs: 'header'
                 },
                 "content": {
-                    templateUrl: 'views/content.html',
+                    templateUrl: './views/content.html',
                     controller: 'MainCtrl',
                     controllerAs: 'main'
                 },
                 "footer": {
-                    templateUrl: 'views/footer.html',
+                    templateUrl: './views/footer.html',
                     controller: 'FooterCtrl',
                     controllerAs: 'footer'
                 }

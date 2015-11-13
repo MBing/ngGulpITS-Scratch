@@ -9,6 +9,7 @@
   "author": "MBing",
   "license": "ISC",
   "devDependencies": {
+    "bower-files": "^3.11.3",
     "browser-sync": "^2.10.0",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.0",

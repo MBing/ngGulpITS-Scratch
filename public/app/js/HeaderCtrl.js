@@ -6,13 +6,11 @@
     angular
         .module('softits')
         .controller('HeaderCtrl', HeaderCtrl);
-
+    console.log('loaded header hier')
     /* @ngInject */
-    function HeaderCtrl() {
+    function HeaderCtrl(menuService) {
         var vm = this;
-        angular.getJSON('../../assets/menu/menu.json',function (data) {
-            console.log(data);
-            vm.menuItems = data;
-        });
+        vm.menuItems = menuService.menuItems;
+        console.log('de header', vm.menuItems);
     }
 })();
