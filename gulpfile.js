@@ -1,4 +1,5 @@
-var es = require('event-stream'),
+var browserSync = require('browser-sync').create(),
+    es = require('event-stream'),
     gulp = require('gulp'),
     angularFilesort = require('gulp-angular-filesort'),
     concat = require('gulp-concat'),
@@ -57,4 +58,27 @@ gulp.task('index', ['styles', 'scripts'], function () {
         .pipe(gulp.dest('./public/dist'));
 });
 
+gulp.task('img', function () {
+    "use strict";
+//    TODO
+});
+
 gulp.task('default', ['index']);
+
+gulp.task('watch', ['index', 'styles', 'scripts'], function () {
+    "use strict";
+    gulp.watch('public/app/styles/**/*', ['styles']);
+    gulp.watch('public/app/app.js', ['scripts']);
+    gulp.watch('public/app/js/**/*', ['scripts']);
+    gulp.watch('public/app/img/**/*', ['img']);
+    gulp.watch('bower.json', ['index'])
+});
+
+gulp.task('serve', ['watch'], function () {
+    "use strict";
+    browserSync.init({
+        server: {
+            baseDir: "./public/dist"
+        }
+    });
+})
