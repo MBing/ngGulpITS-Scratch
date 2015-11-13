@@ -1,0 +1,140 @@
+{
+  "items": [
+    {
+      "title": "PRODUCTEN",
+      "class": ["submenu", "menu-title"],
+      "submenu": [
+        {
+          "title": "First Software",
+          "class": ["submenu-title"],
+          "subItems": [
+            {
+              "title": "First Manager",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "First Jaarrekeningen",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "First Belastingaangifte",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "First Fiches &amp; Bedrijfsvoorheffing",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "First Vaste Activa",
+              "class": ["submenu-item"],
+              "link": ""
+            }
+          ]
+        },
+        {
+          "title": "Andere Software",
+          "class": ["submenu-title"],
+          "subItems": [
+            {
+              "title": "Jurisquare",
+              "class": ["submenu-item", "external"],
+              "link": "http://www.jurisquare.be"
+            },
+            {
+              "title": "ContrAkten",
+              "class": ["submenu-item"],
+              "link": ""
+            }
+          ]
+        },
+        {
+          "title": "Expert Seminaries",
+          "class": ["submenu-title"],
+          "subItems": [
+            {
+              "title": "Overzicht",
+              "class": ["submenu-item", "external"],
+              "link": "http://intersentia.be/nl/studiedagen"
+            }
+          ]
+        },
+        {
+          "title": "Uitgeverij",
+          "class": ["submenu-title"],
+          "subItems": [
+            {
+              "title": "Intersentia",
+              "class": ["submenu-item", "external"],
+              "link": "http://www.intersentia.be"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OVER ONS",
+      "class": ["submenu", "menu-title"],
+      "submenu": [
+        {
+          "title": "Over Ons",
+          "class": ["submenu-title"],
+          "subItems": [
+            {
+              "title": "Over Intersentia",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "Wie is wie",
+              "class": ["submenu-item"],
+              "link": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NIEUWS",
+      "class": ["menu-title"],
+      "submenu": null,
+      "link": "/nieuws"
+    },
+    {
+      "title": "SUPPORT",
+      "class": ["submenu", "menu-title"],
+      "submenu": [
+        {
+          "title": "Support",
+          "class": ["submenu-title"],
+          "subItems": [
+            {
+              "title": "Downloads, nieuwe releases &amp; patches",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "Documentatie centrum",
+              "class": ["submenu-item"],
+              "link": ""
+            },
+            {
+              "title": "Contacteer support",
+              "class": ["submenu-item"],
+              "link": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CONTACT",
+      "class": ["menu-title"],
+      "submenu": null,
+      "link": "/contact"
+    }
+  ]
+}

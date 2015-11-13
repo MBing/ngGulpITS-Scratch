@@ -1,0 +1,23 @@
+<header class="main-header">
+<div class="logo">
+    <img src="logo.png">
+</div>
+<nav class="main-nav">
+    <ul>
+        <li ng-repeat="item in header.menuItems">
+            <a ng-href="item.link"><span>{{item.titel}}</span></a>
+        </li>
+    </ul>
+</nav>
+<div class="right-side">
+    <div class="shopping-icon">
+        <i class="icon icon-shopping-cart"></i>
+    </div>
+    <div class="lang-selection menu-title">
+        <span>header.langs.items[langs.selected]</span>
+        <ul>
+            <li ng-repeat="lang in header.langs.items">lang</li>
+        </ul>
+    </div>
+</div>
+</header>
